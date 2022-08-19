@@ -3,7 +3,8 @@ let game_started = false
 let game_one_over = false
 let accept_answers = false
 let game_one_winner_player_id
-const show_badges = false
+const show_badges = true
+let sec_between_questions = 2;
 
 function actually_start_game() {
     set_player_text_names()
@@ -258,10 +259,8 @@ function clear_answers_marking() {
 
 function show_timer_for_next_question(_question_id) {
     document.getElementById('header').innerText = 'Next Question In 3 Seconds...'
-
-    let timeleft = 2;
     const downloadTimer = setInterval(function(){
-        if(timeleft <= 0){
+        if(sec_between_questions <= 0){
             clearInterval(downloadTimer);
 
             // Clear answers marking
@@ -272,9 +271,9 @@ function show_timer_for_next_question(_question_id) {
             questions_data['current_question_id'] = _question_id+1
         }
         else {
-            document.getElementById("header").innerText = `Next Question In ${timeleft} Seconds...`
+            document.getElementById("header").innerText = `Next Question In ${sec_between_questions} Seconds...`
         }
-        timeleft -= 1;
+        sec_between_questions -= 1;
     }, 1000);
 }
 
