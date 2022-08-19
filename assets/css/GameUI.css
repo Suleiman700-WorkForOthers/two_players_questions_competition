@@ -131,7 +131,7 @@ a.header {
 
 .player1 {
     height: 30px;
-    width: 277px;
+    width: auto;
     padding: 10px;
     background-color: dimgray;
     text-align: center;

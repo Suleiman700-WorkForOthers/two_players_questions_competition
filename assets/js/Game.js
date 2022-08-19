@@ -3,6 +3,7 @@ let game_started = false
 let game_over = false
 
 function actually_start_game() {
+    set_player_text_names()
     const current_question_id = questions_data['current_question_id']
     load_next_question(current_question_id)
 }
@@ -46,7 +47,11 @@ function set_question_answers(_question_data) {
     q4_text.innerHTML = _question_data['answers'][3]
 }
 
-// start_game()
+// Set player text names
+function set_player_text_names() {
+    document.getElementById('p1_name').innerText = get_player_data(1)['name']
+    document.getElementById('p2_name').innerText = get_player_data(2)['name']
+}
 
 // Check which player has pressed the key
 function check_which_player_pressed(_keyCode) {
