@@ -3,6 +3,7 @@ let game_started = false
 let game_one_over = false
 let accept_answers = false
 let game_one_winner_player_id
+const show_badges = false
 
 function actually_start_game() {
     set_player_text_names()
@@ -285,3 +286,15 @@ function close_g1_tutorial() {
     document.getElementById('Modal_GameOne_Tutorial').style.display = 'none'
     accept_answers = true
 }
+
+
+// Check if to show badges
+const badges = document.getElementsByClassName('btn_badge')
+Array.prototype.forEach.call(badges, function(el) {
+    if (show_badges) {
+        el.style.display = "block";
+    }
+    else {
+        el.style.display = "none";
+    }
+})
