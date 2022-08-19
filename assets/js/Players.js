@@ -12,40 +12,40 @@ const players_data = [
     }
 ]
 
-const p1_controls = [
+let p1_controls = [
     {
-        key: 81, // Q
+        key: 65, // A
         target_answer: 1
     },
     {
-        key: 87, // W
+        key: 66, // B
         target_answer: 2
     },
     {
-        key: 65, // A
+        key: 67, // C
         target_answer: 3
     },
     {
-        key: 83, // S
+        key: 68, // D
         target_answer: 4
     },
 ]
 
 const p2_controls = [
     {
-        key: 38, // Arrow Up
+        key: 69, // E
         target_answer: 1
     },
     {
-        key: 40, // Arrow Down
+        key: 70, // F
         target_answer: 2
     },
     {
-        key: 37, // Arrow Left
+        key: 71, // G
         target_answer: 3
     },
     {
-        key: 39, // Arrow Right
+        key: 72, // H
         target_answer: 4
     },
 ]

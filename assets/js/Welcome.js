@@ -118,3 +118,11 @@ function start_game() {
 }
 
 init()
+
+
+document.getElementById('auto').addEventListener('click', () => {
+    document.getElementById('player_one_name').value = 'Player 1'
+    document.getElementById('player_two_name').value = 'Player 2'
+    document.getElementById('player_one_save').click()
+    document.getElementById('player_two_save').click()
+})

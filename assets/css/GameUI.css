@@ -231,3 +231,19 @@ a.header {
     right: 20px;
     transition: all .3s;
 }
+
+.badge3 {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background: white;
+    color: black;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -15px;
+    right: 70px;
+    transition: all .3s;
+}

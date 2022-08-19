@@ -9,66 +9,78 @@
 </head>
 <body>
 
+
 <div id="game_section" style="display: none;">
     <div class="div">
-        <div class="header">Have Fun Playing!</div>
-<!--        <div class="result"></div>-->
-        <div class="section">
-            <div class="header"> </div>
-            <div class="article">
-                <div class="player1" id="p1_name">
-                    PLAYER 1
-                </div>
-                <div class="row text-center">
-                    <h3>Score: <span id="p1_score">0</span></h3>
-                </div>
-            </div>
-            <article id="middle">
-                <div class="question mt-3" id="question_text" dir="auto">What is the capital of Palestine?</div>
+        <div class="header" id="header">Have Fun Playing!</div>
 
-
-                <div class="text-center mt-10">
-                    <div class="row">
-                        <div class="column">
-                            <button class="opt-btn opt1-btn" dir="auto">
-                                <span id="q1_text"></span>
-                                <span class="badge">Q</span>
-                                <span class="badge2">↑</span>
-                            </button>
+        <div id="game_one_section">
+            <div class="section">
+                <div class="header"> </div>
+                <div class="article">
+                    <div class="player1" id="p1_name">
+                        PLAYER 1
+                    </div>
+                    <div class="row text-center">
+                        <h3>Score: <span id="p1_score">0</span></h3>
+                    </div>
+                </div>
+                <article id="middle">
+                    <div class="question mt-3" id="question_text" dir="auto">What is the capital of Palestine?</div>
+                    <div class="text-center mt-10">
+                        <div class="row">
+                            <div class="column">
+                                <button class="opt-btn opt1-btn" dir="auto" id="answer_1">
+                                    <span id="q1_text"></span>
+                                    <span class="badge" id="p1_control_a1">A</span>
+                                    <span class="badge2">E</span>
+                                    <span class="btn-overlay" id="answer_1_overlay" checked="false"></span>
+                                </button>
+                            </div>
+                            <div class="column">
+                                <button class="opt-btn opt2-btn" dir="auto" id="answer_2">
+                                    <span id="q2_text"></span>
+                                    <span class="badge" id="p1_control_a2">B</span>
+                                    <span class="badge2">F</span>
+                                    <span class="btn-overlay" id="answer_2_overlay" checked="false"></span>
+                                </button>
+                            </div>
                         </div>
-                        <div class="column">
-                            <button class="opt-btn opt2-btn" dir="auto">
-                                <span id="q2_text"></span>
-                                <span class="badge">W</span>
-                                <span class="badge2">↓</span>
+
+                        <div class="row mt-10">
+                            <div class="column">
+                                <button class="opt-btn opt3-btn" dir="auto" id="answer_3">
+                                    <span id="q3_text"></span>
+                                    <span class="badge" id="p1_control_a3">C</span>
+                                    <span class="badge2">G</span>
+                                    <span class="btn-overlay" id="answer_3_overlay" checked="false"></span>
+                                </button>
+                            </div>
+                            <div class="column">
+                                <button class="opt-btn opt4-btn" dir="auto" id="answer_4">
+                                    <span id="q4_text"></span>
+                                    <span class="badge" id="p1_control_a4">D</span>
+                                    <span class="badge2">H</span>
+                                    <span class="btn-overlay" id="answer_4_overlay" checked="false"></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row d-flex justify-center">
+                            <button class="btn" dir="auto" id="next_question" disabled="disabled" style="position: relative; display: none;">
+                                <span class="badge3">K</span>
+                                Next
                             </button>
                         </div>
                     </div>
-
-                    <div class="row mt-10">
-                        <div class="column">
-                            <button class="opt-btn opt3-btn" dir="auto">
-                                <span id="q3_text"></span>
-                                <span class="badge">A</span>
-                                <span class="badge2">←</span>
-                            </button>
-                        </div>
-                        <div class="column">
-                            <button class="opt-btn opt4-btn" dir="auto">
-                                <span id="q4_text"></span>
-                                <span class="badge">D</span>
-                                <span class="badge2">→</span>
-                            </button>
-                        </div>
+                </article>
+                <div class="articleright">
+                    <div class="player2" id="p2_name">
+                        PLAYER 2
                     </div>
-                </div>
-            </article>
-            <div class="articleright">
-                <div class="player2" id="p2_name">
-                    PLAYER 2
-                </div>
-                <div class="row text-center">
-                    <h3>Score: <span id="p2_score">0</span></h3>
+                    <div class="row text-center" id="p2_score_section">
+                        <h3>Score: <span id="p2_score">0</span></h3>
+                    </div>
                 </div>
             </div>
         </div>
@@ -116,6 +128,7 @@
     </div>
     <div class="row text-center">
         <button class="btn" id="start_game" disabled="disabled">Start Game</button>
+        <button id="auto">auto</button>
     </div>
 </section>
 
@@ -126,7 +139,77 @@
         <span class="close" onClick="closeModal()">&times;</span>
         <p id="modal_text"></p>
     </div>
+</div>
 
+<!-- The Modal -->
+<div id="Modal_EndGameOne" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content text-center">
+        <span class="close" id="end_game_one_close_btn">&times;</span>
+        <p id="end_game_one_text"></p>
+        <button class="btn" onClick="start_game_two()" id="go_to_round_two">Next Round</button>
+        <div class="d-flex justify-center">
+            <button class="btn" onClick="restart_game_one()" id="game_one_restart" style="display: none;">Restart Game</button>
+        </div>
+    </div>
+</div>
+
+<!-- The Modal -->
+<div id="Modal_EndGameTwo" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content text-center">
+        <p>Game two has ended and the player score is: <span id="g2_player_score">0</span></p>
+    </div>
+</div>
+
+<!-- The Modal -->
+<div id="Modal_GameOne_Tutorial" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content text-center" style="width: 80% !important;">
+        <div class="row">
+            Welcome To Game One
+        </div>
+        <div class="row mt-3">
+            This chapter requires you to answer the question before the other player to get a score point.
+        </div>
+        <div class="row mt-3">
+            Each answer has a unique color, Press the button color that matches the answer
+        </div>
+        <div class="row mt-3">
+            <button class="opt-btn opt2-btn" style="width: 100px; height: 100px;">
+                <span>אדיס אבבה</span>
+                <span class="btn-overlay"></span>
+            </button>
+        </div>
+        <div class="row mt-3">
+            <button class="btn" onClick="close_g1_tutorial()">Ok</button>
+        </div>
+    </div>
+</div>
+
+<!-- The Modal -->
+<div id="Modal_GameTwo_Tutorial" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content text-center" style="width: 80% !important;">
+        <div class="row">
+            Welcome To Game Two
+        </div>
+        <div class="row mt-3">
+            In this chapter the only player playing is the player who won in the game one.
+        </div>
+        <div class="row mt-3">
+            Each answer has a unique color, Use your arduino controller to select the answer then press the confirm button to submit your answer.
+        </div>
+        <div class="row mt-3">
+            <button class="opt-btn opt2-btn" style="width: 100px; height: 100px;">
+                <span>אדיס אבבה</span>
+                <span class="btn-overlay"></span>
+            </button>
+        </div>
+        <div class="row mt-3">
+            <button class="btn" onClick="close_g2_tutorial()">Ok</button>
+        </div>
+    </div>
 </div>
 
 <script src="./assets/js/Questions.js"></script>
@@ -134,6 +217,7 @@
 <script src="assets/js/PlayerTwo.js"></script>
 <script src="./assets/js/Sound.js"></script>
 <script src="./assets/js/Game.js"></script>
+<script src="./assets/js/GameTwo.js"></script>
 <script src="./assets/js/Welcome.js"></script>
 </body>
 </html>
