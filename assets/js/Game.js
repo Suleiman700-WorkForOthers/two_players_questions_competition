@@ -258,7 +258,7 @@ function clear_answers_marking() {
 function show_timer_for_next_question(_question_id) {
     document.getElementById('header').innerText = 'Next Question In 3 Seconds...'
 
-    let timeleft = 1;
+    let timeleft = 2;
     const downloadTimer = setInterval(function(){
         if(timeleft <= 0){
             clearInterval(downloadTimer);

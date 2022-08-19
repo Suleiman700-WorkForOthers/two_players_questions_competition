@@ -140,6 +140,7 @@ function check_if_correct_answer_g2(_player_id) {
         // }
     }
     else {
+        alert('Wrong Answer!')
         unmark_chosen_question(chosen_answer_id)
 
         // Mark correct answer with green and wrong answers with red
