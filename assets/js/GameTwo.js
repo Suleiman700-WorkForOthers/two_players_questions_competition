@@ -14,7 +14,6 @@ function start_game_two() {
 
     // Change player controls
 
-
     remove_player_two_from_game()
     show_next_question_btn()
 

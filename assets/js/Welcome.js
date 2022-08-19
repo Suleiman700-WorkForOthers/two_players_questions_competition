@@ -11,6 +11,7 @@ function p1_join() {
 
     btn.addEventListener('click', () => {
         const p1_name = player_name.value
+
         // If name is empty
         if (p1_name==='') {
             player_name.style.border = '2px solid red'

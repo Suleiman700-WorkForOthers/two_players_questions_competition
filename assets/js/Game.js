@@ -4,7 +4,6 @@ let game_one_over = false
 let accept_answers = false
 let game_one_winner_player_id
 const show_badges = true
-let sec_between_questions = 2;
 
 function actually_start_game() {
     set_player_text_names()
@@ -130,6 +129,13 @@ function check_if_correct_answer(_player_id, _chosen_answer_id) {
     }
     else {
         console.log('bad')
+        accept_answers = false
+
+        // Mark correct answer with green and wrong answers with red
+        mark_correct_and_wrong_answers(question_id)
+
+        // Show timer for the next question
+        show_timer_for_next_question(question_id)
     }
 }
 
@@ -259,6 +265,7 @@ function clear_answers_marking() {
 
 function show_timer_for_next_question(_question_id) {
     document.getElementById('header').innerText = 'Next Question In 3 Seconds...'
+    let sec_between_questions = 2
     const downloadTimer = setInterval(function(){
         if(sec_between_questions <= 0){
             clearInterval(downloadTimer);

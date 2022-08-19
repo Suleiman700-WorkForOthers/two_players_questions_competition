@@ -66,6 +66,8 @@ function set_player_data(_player_id, _key, _value) {
     })
 }
 
+
+
 function increase_player_score(_player_id) {
     players_data.map(player_data => {
         if (player_data['id'] === _player_id) {
