@@ -92,9 +92,23 @@ function mark_chosen_question(_chosen_answer_id) {
 }
 
 function unmark_chosen_question(_chosen_answer_id) {
-    console.log('here')
-    document.getElementById(`answer_${_chosen_answer_id}_overlay`).setAttribute('checked', 'false')
-    document.getElementById(`answer_${_chosen_answer_id}_overlay`).style.border = 'none'
+    // console.log('here')
+    // document.getElementById(`answer_${_chosen_answer_id}_overlay`).setAttribute('checked', 'false')
+    // document.getElementById(`answer_${_chosen_answer_id}_overlay`).style.border = 'none'
+    // already_chosen_answer = false
+    // chosen_answer_id = null
+
+    document.getElementById(`answer_1_overlay`).setAttribute('checked', 'false')
+    document.getElementById(`answer_1_overlay`).style.border = 'none'
+
+    document.getElementById(`answer_2_overlay`).setAttribute('checked', 'false')
+    document.getElementById(`answer_2_overlay`).style.border = 'none'
+
+    document.getElementById(`answer_3_overlay`).setAttribute('checked', 'false')
+    document.getElementById(`answer_3_overlay`).style.border = 'none'
+
+    document.getElementById(`answer_4_overlay`).setAttribute('checked', 'false')
+    document.getElementById(`answer_4_overlay`).style.border = 'none'
     already_chosen_answer = false
     chosen_answer_id = null
 }

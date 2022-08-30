@@ -164,14 +164,16 @@ document.addEventListener("keydown", function(event) {
             check_if_correct_answer_g2(1)
         }
         else {
+            unmark_chosen_question(player_pressed['target_answer'])
+            mark_chosen_question(player_pressed['target_answer'])
             // Check if answer has been checked
-            const is_checked = document.getElementById(`answer_${player_pressed['target_answer']}_overlay`).getAttribute('checked')
-            if (is_checked === 'false') {
-                mark_chosen_question(player_pressed['target_answer'])
-            }
-            else {
-                unmark_chosen_question(player_pressed['target_answer'])
-            }
+            // const is_checked = document.getElementById(`answer_${player_pressed['target_answer']}_overlay`).getAttribute('checked')
+            // if (is_checked === 'false') {
+            //     mark_chosen_question(player_pressed['target_answer'])
+            // }
+            // else {
+            //     unmark_chosen_question(player_pressed['target_answer'])
+            // }
         }
     }
 
